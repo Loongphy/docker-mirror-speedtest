@@ -33,3 +33,41 @@
 | dhub.kubesre.xyz | ✅ Good | 11.24 MB/s | 3.664s | ✅ Verified |
 | docker.m.daocloud.io|  |  |  |  |
 | dockerhub.icu|  |  |  |  |
+
+> [!NOTE]
+> 以下均为 Debian 系统配置，其余系统配置镜像源需要做调整。
+
+## 安装 Docker
+
+1. 添加 Docker 的 GPG 密钥
+   ```shell
+   curl -fsSL https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+   echo \
+    "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/debian \
+    $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+   ```
+2. 安装 Docker
+  ```shell
+  apt update
+  apt install docker-ce docker-ce-cli containerd.io
+  ```
+3. 配置镜像
+   ```shell
+   mkdir -p /etc/docker
+   nano /etc/docker/daemon.json
+   ```
+   ```json
+   {
+        "registry-mirrors": [
+                "https://doublezonline.cloud",
+                "https://lynn520.xyz",
+                "https://dockerpull.com",
+                "https://docker.1panel.live"
+        ]
+   }
+  ```
+4. 重启 Docker 服务
+   ```shell
+   systemctl daemon-reload
+   systemctl restart docker
+   ```
