@@ -27,47 +27,42 @@
 | docker.anyhub.us.kg | ✅ Good | 6.81 MB/s | 6.045s | ✅ Verified |
 | docker.wget.at | ✅ Good | 39.81 MB/s | 1.035s | ✅ Verified |
 | docker.awsl9527.cn | ✅ Good | 39.21 MB/s | 1.051s | ✅ Verified |
-| dislabaiot.xy | ❌ Failed | - | - | - |
 | dockerpull.com | ✅ Good | 46.72 MB/s | 0.882s | ✅ Verified |
-| docker.fxxk.dedyn.io | ❌ Failed | - | - | - |
 | dhub.kubesre.xyz | ✅ Good | 5.61 MB/s | 7.335s | ✅ Verified |
 | docker.m.daocloud.io|  |  |  |  |
 | dockerhub.icu|  |  |  |  |
 
-> [!NOTE]
-> 以下均为 Debian 系统配置，其余系统配置镜像源需要做调整。
+## Docker 配置
 
-## 安装 Docker
+1. 安装 Docker
+```shell
+export DOWNLOAD_URL="https://mirrors.tuna.tsinghua.edu.cn/docker-ce"
+# 如您使用 curl
+curl -fsSL https://raw.githubusercontent.com/docker/docker-install/master/install.sh | sh
+# 如您使用 wget
+wget -O- https://raw.githubusercontent.com/docker/docker-install/master/install.sh | sh
+```
 
-1. 添加 Docker 的 GPG 密钥
-   ```shell
-   curl -fsSL https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-   echo \
-    "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/debian \
-    $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-   ```
-2. 安装 Docker
-  ```shell
-  apt update
-  apt install docker-ce docker-ce-cli containerd.io
-  ```
-3. 配置镜像
-   ```shell
-   mkdir -p /etc/docker
-   nano /etc/docker/daemon.json
-   ```
-   ```json
-   {
-        "registry-mirrors": [
-                "https://doublezonline.cloud",
-                "https://lynn520.xyz",
-                "https://dockerpull.com",
-                "https://docker.1panel.live"
-        ]
-   }
-  ```
-4. 重启 Docker 服务
-   ```shell
-   systemctl daemon-reload
-   systemctl restart docker
-   ```
+2. 配置镜像
+
+```shell
+mkdir -p /etc/docker
+nano /etc/docker/daemon.json
+```
+
+```json
+{
+     "registry-mirrors": [
+             "https://doublezonline.cloud",
+             "https://lynn520.xyz",
+             "https://dockerpull.com",
+             "https://docker.1panel.live"
+     ]
+}
+```
+
+ 3.重启 Docker 服务
+```shell
+systemctl daemon-reload
+systemctl restart docker
+```
