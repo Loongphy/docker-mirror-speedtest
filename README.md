@@ -17,18 +17,18 @@
 
 | Registry | Status | Speed | Time | Integrity |
 |----------|--------|-------|------|-----------|
-| hub.rat.dev | ✅ Good | 53.31 MB/s | 0.773s | ✅ Verified |
-| docker.1panel.live | ✅ Good | 86.03 MB/s | 0.479s | ✅ Verified |
-| docker.wanpeng.top | ✅ Good | 74.79 MB/s | 0.551s | ✅ Verified |
-| doublezonline.cloud | ✅ Good | 147.18 MB/s | 0.280s | ✅ Verified |
-| docker.mrxn.net | ✅ Good | 86.57 MB/s | 0.476s | ✅ Verified |
-| lynn520.xyz | ✅ Good | 147.18 MB/s | 0.280s | ✅ Verified |
-| ginger20240704.asia | ✅ Good | 107.32 MB/s | 0.384s | ✅ Verified |
-| docker.anyhub.us.kg | ✅ Good | 25.50 MB/s | 1.616s | ✅ Verified |
-| docker.wget.at | ✅ Good | 87.68 MB/s | 0.470s | ✅ Verified |
-| docker.awsl9527.cn | ✅ Good | 75.34 MB/s | 0.547s | ✅ Verified |
-| dockerpull.com | ✅ Good | 77.03 MB/s | 0.535s | ✅ Verified |
-| dhub.kubesre.xyz | ✅ Good | 9.40 MB/s | 4.381s | ✅ Verified |
+| hub.rat.dev | ✅ Good | 82.09 MB/s | 0.502s | ✅ Verified |
+| docker.1panel.live | ✅ Good | 136.46 MB/s | 0.302s | ✅ Verified |
+| docker.wanpeng.top | ✅ Good | 66.47 MB/s | 0.620s | ✅ Verified |
+| doublezonline.cloud | ✅ Good | 124.88 MB/s | 0.330s | ✅ Verified |
+| docker.mrxn.net | ✅ Good | 116.74 MB/s | 0.353s | ✅ Verified |
+| lynn520.xyz | ✅ Good | 153.20 MB/s | 0.269s | ✅ Verified |
+| ginger20240704.asia | ✅ Good | 100.76 MB/s | 0.409s | ✅ Verified |
+| docker.anyhub.us.kg | ✅ Good | 24.25 MB/s | 1.699s | ✅ Verified |
+| docker.wget.at | ✅ Good | 72.04 MB/s | 0.572s | ✅ Verified |
+| docker.awsl9527.cn | ✅ Good | 101.25 MB/s | 0.407s | ✅ Verified |
+| dockerpull.com | ✅ Good | 97.89 MB/s | 0.421s | ✅ Verified |
+| dhub.kubesre.xyz | ✅ Good | 8.20 MB/s | 5.024s | ✅ Verified |
 | docker.m.daocloud.io|  |  |  |  |
 | dockerhub.icu|  |  |  |  |
 
