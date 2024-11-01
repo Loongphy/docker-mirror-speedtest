@@ -17,18 +17,18 @@
 
 | Registry | Status | Speed | Time | Integrity |
 |----------|--------|-------|------|-----------|
-| hub.rat.dev | ✅ Good | 32.84 MB/s | 1.364s | ✅ Verified |
-| docker.1panel.live | ✅ Good | 48.12 MB/s | 0.931s | ✅ Verified |
-| docker.wanpeng.top | ✅ Good | 43.29 MB/s | 1.035s | ✅ Verified |
-| doublezonline.cloud | ✅ Good | 51.73 MB/s | 0.866s | ✅ Verified |
-| docker.mrxn.net | ✅ Good | 37.27 MB/s | 1.202s | ✅ Verified |
+| hub.rat.dev | ✅ Good | 72.61 MB/s | 0.617s | ✅ Verified |
+| docker.1panel.live | ✅ Good | 180.66 MB/s | 0.248s | ✅ Verified |
+| docker.wanpeng.top | ✅ Good | 68.72 MB/s | 0.652s | ✅ Verified |
+| doublezonline.cloud | ✅ Good | 135.77 MB/s | 0.330s | ✅ Verified |
+| docker.mrxn.net | ✅ Good | 121.42 MB/s | 0.369s | ✅ Verified |
 | lynn520.xyz | ❌ Failed | - | - | - |
-| ginger20240704.asia | ✅ Good | 46.28 MB/s | 0.968s | ✅ Verified |
-| docker.anyhub.us.kg | ✅ Good | 8.08 MB/s | 5.543s | ✅ Verified |
+| ginger20240704.asia | ✅ Good | 123.77 MB/s | 0.362s | ✅ Verified |
+| docker.anyhub.us.kg | ✅ Good | 35.87 MB/s | 1.249s | ✅ Verified |
 | docker.wget.at | ❌ Failed | - | - | - |
-| docker.awsl9527.cn | ✅ Good | 44.36 MB/s | 1.010s | ✅ Verified |
+| docker.awsl9527.cn | ✅ Good | 86.83 MB/s | 0.516s | ✅ Verified |
 | dockerpull.com | ❌ Failed | - | - | - |
-| dhub.kubesre.xyz | ✅ Good | 12.39 MB/s | 3.615s | ✅ Verified |
+| dhub.kubesre.xyz | ✅ Good | 14.38 MB/s | 3.114s | ✅ Verified |
 | docker.m.daocloud.io|  |  |  |  |
 | dockerhub.icu|  |  |  |  |
 
