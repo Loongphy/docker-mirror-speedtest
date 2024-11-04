@@ -38,7 +38,6 @@ jobs:
             local attempt=1
             local output=$(mktemp)
 
-            # 拉取官方镜像用于完整性验证
             docker pull docker.io/$image > /dev/null 2>&1
             official_digest=$(docker inspect --format='{{index .RepoDigests 0}}' docker.io/$image | cut -d'@' -f2)
 
@@ -51,7 +50,6 @@ jobs:
                 speed=$(echo "scale=2; $image_size / $pull_time" | bc)
                 echo "$registry is good, Speed: ${speed} MB/s, Time: ${pull_time}s"
 
-                # 检查镜像完整性
                 registry_digest=$(docker inspect --format='{{index .RepoDigests 0}}' $registry/$image | cut -d'@' -f2)
                 if [ "$official_digest" = "$registry_digest" ]; then
                   integrity="✅ Verified"
@@ -60,6 +58,7 @@ jobs:
                 fi
 
                 update_readme "$registry" "$status" "${speed} MB/s" "${pull_time}s" "$integrity"
+                echo "$registry,$speed" >> /tmp/registry_speeds.txt
                 rm "$output"
                 return 0
               else
@@ -77,20 +76,27 @@ jobs:
           
           # 测试每个 registry
           image="library/nginx:alpine"
+          > /tmp/registry_speeds.txt
           for registry in $registries; do
             echo "Testing $registry"
-            # 清理可能存在的镜像
             docker rmi "$registry/$image" > /dev/null 2>&1 || true
             
-            # 使用子shell隔离每个registry的执行
             (
               test_registry "$registry" "$image"
               docker rmi "$registry/$image" > /dev/null 2>&1 || true
-            ) || true  # 即使子shell失败，也继续执行下一个registry
+            ) || true
           done
 
-          # 清理官方镜像
           docker rmi docker.io/$image > /dev/null 2>&1 || true
+
+          # 获取前三快的镜像
+          top_three=$(sort -t',' -k2 -nr /tmp/registry_speeds.txt | head -n 3 | cut -d',' -f1 | sed 's/^/"/' | sed 's/$/"/' | tr '\n' ',' | sed 's/,$//')
+
+          # 更新 README.md 中的镜像列表
+          sed -i '/^     "registry-mirrors": \[/,/^     \]/ c\
+     "registry-mirrors": [\
+             '"$top_three"'\
+     ]' README.md
 
       - name: Archive test results
         if: always()
@@ -104,4 +110,4 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
           git add README.md
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Update registry test results"; git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update registry test results and top 3 mirrors"; git push)
