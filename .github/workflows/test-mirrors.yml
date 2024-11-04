@@ -1,22 +1,45 @@
 name: Test Registry
 
 on:
+  # 推送时触发
   push:
+  # 定时触发，每天执行一次
   schedule:
     - cron: '0 0 */1 * *'
+  # 手动触发
   workflow_dispatch:
 
 jobs:
-  ci:
+  test-registry:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
       - name: Test Registries and Update README
         run: |
+          # 定义表格格式化函数
+          format_table_cell() {
+            local content="$1"
+            local width="$2"
+            printf "%-${width}s" "$content"
+          }
+
           # 读取 README.md 中的 registry 列表
-          registries=$(awk '/\| Registry \| Status \| Speed \| Time \| Integrity \|/,/^$/' README.md | tail -n +3 | sed '/^$/d' | awk -F'|' '{print $2}' | sed 's/^ *//;s/ *$//')
-          
+          registries=$(awk '
+            BEGIN { FS="|"; OFS="|" }
+            /\| Registry \| Status \| Speed \| Time \| Integrity \|/,/^$/ {
+              if (NR>2 && NF>1) {
+                registry = $2
+                sub(/^[[:space:]]+/, "", registry)
+                sub(/[[:space:]]+$/, "", registry)
+                if (registry != "") print registry
+              }
+            }
+          ' README.md)
+
           # 更新 README.md 的函数
           update_readme() {
             local registry="$1"
@@ -24,10 +47,18 @@ jobs:
             local speed="$3"
             local time="$4"
             local integrity="$5"
-            sed -i "s#| $registry |.*#| $registry | $status | $speed | $time | $integrity |#" README.md
+            
+            # 格式化每个单元格，保持对齐
+            local formatted_line="| $(format_table_cell "$registry" 10) |"
+            formatted_line+=" $(format_table_cell "$status" 6) |"
+            formatted_line+=" $(format_table_cell "$speed" 7) |"
+            formatted_line+=" $(format_table_cell "$time" 6) |"
+            formatted_line+=" $(format_table_cell "$integrity" 9) |"
+            
+            sed -i "/| $registry *|/c\\$formatted_line" README.md
           }
-          
-          # 测试 registry 的函数，包含重试逻辑和完整性检查
+
+          # 测试 registry 的函数
           test_registry() {
             local registry="$1"
             local image="$2"
@@ -35,63 +66,62 @@ jobs:
             local attempt=1
             local output=$(mktemp)
 
-            # 首先拉取官方镜像
-            docker pull docker.io/$image > /dev/null 2>&1
+            # 拉取官方镜像作为基准
+            if ! docker pull docker.io/$image > /dev/null 2>&1; then
+              echo "Failed to pull official image"
+              update_readme "$registry" "❌" "-" "-" "-"
+              return 1
+            fi
+
             official_digest=$(docker inspect --format='{{index .RepoDigests 0}}' docker.io/$image | cut -d'@' -f2)
 
             while [ $attempt -le $max_attempts ]; do
-              echo "Attempt $attempt of $max_attempts for $registry"
+              echo "Testing $registry (Attempt $attempt/$max_attempts)"
+              
               if timeout 60s bash -c "time docker pull $registry/$image" > "$output" 2>&1; then
-                status="✅ Good"
                 pull_time=$(grep real "$output" | awk '{print $2}' | sed 's/0m//;s/s//')
                 image_size=$(docker image inspect "$registry/$image" --format='{{.Size}}' | awk '{print $1/1024/1024}')
-                speed=$(echo "scale=2; $image_size / $pull_time" | bc)
-                echo "$registry is good, Speed: ${speed} MB/s, Time: ${pull_time}s"
+                speed=$(printf "%.2f" $(echo "scale=2; $image_size / $pull_time" | bc))
 
-                # 检查镜像完整性
                 registry_digest=$(docker inspect --format='{{index .RepoDigests 0}}' $registry/$image | cut -d'@' -f2)
+                
                 if [ "$official_digest" = "$registry_digest" ]; then
-                  integrity="✅ Verified"
+                  update_readme "$registry" "✅" "${speed} MB/s" "${pull_time}s" "✅"
                 else
-                  integrity="❌ Mismatch"
+                  update_readme "$registry" "✅" "${speed} MB/s" "${pull_time}s" "❌"
                 fi
 
-                update_readme "$registry" "$status" "${speed} MB/s" "${pull_time}s" "$integrity"
-                rm "$output"
+                rm -f "$output"
                 return 0
-              else
-                echo "$registry failed on attempt $attempt"
-                attempt=$((attempt + 1))
-                sleep 5  # 等待5秒后重试
               fi
+
+              attempt=$((attempt + 1))
+              sleep 5
             done
 
-            status="❌ Failed"
-            update_readme "$registry" "$status" "-" "-" "-"
-            rm "$output"
+            update_readme "$registry" "❌" "-" "-" "-"
+            rm -f "$output"
             return 1
           }
-          
-          # 测试每个 registry
+
+          # 主测试循环
           image="library/nginx:alpine"
-          for registry in $registries; do
-            echo "Testing $registry"
-            # 清理可能存在的镜像
-            docker rmi "$registry/$image" > /dev/null 2>&1 || true
+          echo "$registries" | while IFS='|' read -r registry _; do
+            registry=$(echo "$registry" | xargs)
+            [ -z "$registry" ] && continue
             
-            # 使用子shell隔离每个registry的执行
-            (
-              test_registry "$registry" "$image"
-              docker rmi "$registry/$image" > /dev/null 2>&1 || true
-            ) || true  # 即使子shell失败，也继续执行下一个registry
+            echo "Testing $registry"
+            docker rmi "$registry/$image" >/dev/null 2>&1 || true
+            test_registry "$registry" "$image"
+            docker rmi "$registry/$image" >/dev/null 2>&1 || true
           done
 
-          # 清理官方镜像
-          docker rmi docker.io/$image > /dev/null 2>&1 || true
+          # 清理
+          docker rmi docker.io/$image >/dev/null 2>&1 || true
 
       - name: Commit and push if changed
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
           git add README.md
-          git diff --quiet && git diff --staged --quiet || (git commit -m "update registry test results"; git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update registry test results" && git push)
