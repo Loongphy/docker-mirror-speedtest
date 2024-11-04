@@ -17,20 +17,20 @@
 
 | Registry | Status | Speed | Time | Integrity |
 |----------|--------|-------|------|-----------|
-| hub.rat.dev | ✅ Good | 43.84 MB/s | 1.022s | ✅ Verified |
-| docker.1panel.live | ✅ Good | 68.50 MB/s | 0.654s | ✅ Verified |
-| docker.wanpeng.top | ✅ Good | 49.07 MB/s | 0.913s | ✅ Verified |
-| doublezonline.cloud | ✅ Good | 89.25 MB/s | 0.502s | ✅ Verified |
-| docker.mrxn.net | ✅ Good | 57.66 MB/s | 0.777s | ✅ Verified |
+| hub.rat.dev | ✅ Good | 15.78 MB/s | 2.838s | ✅ Verified |
+| docker.1panel.live | ✅ Good | 64.74 MB/s | 0.692s | ✅ Verified |
+| docker.wanpeng.top | ✅ Good | 61.46 MB/s | 0.729s | ✅ Verified |
+| doublezonline.cloud | ✅ Good | 90.15 MB/s | 0.497s | ✅ Verified |
+| docker.mrxn.net | ✅ Good | 63.01 MB/s | 0.711s | ✅ Verified |
 | lynn520.xyz | ❌ Failed | - | - | - |
-| ginger20240704.asia | ✅ Good | 95.12 MB/s | 0.471s | ✅ Verified |
-| docker.anyhub.us.kg | ✅ Good | 35.87 MB/s | 1.249s | ✅ Verified |
+| ginger20240704.asia | ✅ Good | 64.65 MB/s | 0.693s | ✅ Verified |
+| docker.anyhub.us.kg | ✅ Good | 23.47 MB/s | 1.909s | ✅ Verified |
 | docker.wget.at | ❌ Failed | - | - | - |
-| docker.awsl9527.cn | ✅ Good | 41.33 MB/s | 1.084s | ✅ Verified |
-| dockerpull.com | ✅ Good | 32.42 MB/s | 1.382s | ✅ Verified |
-| dhub.kubesre.xyz | ✅ Good | 13.69 MB/s | 3.272s | ✅ Verified |
-| docker.m.daocloud.io | - | - | - | - |
-| dockerhub.icu | - | - | - | - |
+| docker.awsl9527.cn | ✅ Good | 59.26 MB/s | 0.756s | ✅ Verified |
+| dockerpull.com | ❌ Failed | - | - | - |
+| dhub.kubesre.xyz | ✅ Good | 11.12 MB/s | 4.028s | ✅ Verified |
+| docker.m.daocloud.io | ✅ Good | 12.64 MB/s | 3.542s | ✅ Verified |
+| dockerhub.icu | ❌ Failed | - | - | - |
 
 ## Docker 配置
 
@@ -53,10 +53,7 @@ nano /etc/docker/daemon.json
 ```json
 {
      "registry-mirrors": [
-             "https://doublezonline.cloud",
-             "https://lynn520.xyz",
-             "https://dockerpull.com",
-             "https://docker.1panel.live"
+             "doublezonline.cloud","docker.1panel.live","ginger20240704.asia"
      ]
 }
 ```
