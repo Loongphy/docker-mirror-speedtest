@@ -17,19 +17,19 @@
 
 | Registry | Status | Speed | Time | Integrity |
 |----------|--------|-------|------|-----------|
-| hub.rat.dev | ✅ Good | 92.19 MB/s | 0.486s | ✅ Verified |
-| docker.1panel.live | ✅ Good | 69.89 MB/s | 0.641s | ✅ Verified |
-| docker.wanpeng.top | ✅ Good | 49.78 MB/s | 0.900s | ✅ Verified |
-| doublezonline.cloud | ✅ Good | 79.58 MB/s | 0.563s | ✅ Verified |
-| docker.mrxn.net | ✅ Good | 52.46 MB/s | 0.854s | ✅ Verified |
+| hub.rat.dev | ✅ Good | 105.67 MB/s | 0.424s | ✅ Verified |
+| docker.1panel.live | ✅ Good | 103.47 MB/s | 0.433s | ✅ Verified |
+| docker.wanpeng.top | ✅ Good | 94.52 MB/s | 0.474s | ✅ Verified |
+| doublezonline.cloud | ✅ Good | 150.86 MB/s | 0.297s | ✅ Verified |
+| docker.mrxn.net | ✅ Good | 106.67 MB/s | 0.420s | ✅ Verified |
 | lynn520.xyz | ❌ Failed | - | - | - |
-| ginger20240704.asia | ✅ Good | 70.55 MB/s | 0.635s | ✅ Verified |
-| docker.anyhub.us.kg | ✅ Good | 43.16 MB/s | 1.038s | ✅ Verified |
+| ginger20240704.asia | ❌ Failed | - | - | - |
+| docker.anyhub.us.kg | ✅ Good | 30.56 MB/s | 1.466s | ✅ Verified |
 | docker.wget.at | ❌ Failed | - | - | - |
-| docker.awsl9527.cn | ✅ Good | 65.60 MB/s | 0.683s | ✅ Verified |
+| docker.awsl9527.cn | ✅ Good | 82.06 MB/s | 0.546s | ✅ Verified |
 | dockerpull.com | ❌ Failed | - | - | - |
-| dhub.kubesre.xyz | ✅ Good | 13.68 MB/s | 3.273s | ✅ Verified |
-| docker.m.daocloud.io | ✅ Good | 14.98 MB/s | 2.991s | ✅ Verified |
+| dhub.kubesre.xyz | ✅ Good | 13.53 MB/s | 3.310s | ✅ Verified |
+| docker.m.daocloud.io | ✅ Good | 13.45 MB/s | 3.329s | ✅ Verified |
 | dockerhub.icu | ❌ Failed | - | - | - |
 
 ## Docker 配置
@@ -53,7 +53,7 @@ nano /etc/docker/daemon.json
 ```json
 {
      "registry-mirrors": [
-             "hub.rat.dev","doublezonline.cloud","ginger20240704.asia"
+             "doublezonline.cloud","docker.mrxn.net","hub.rat.dev"
      ]
 }
 ```
