@@ -22,15 +22,12 @@
 | docker.wanpeng.top | ✅ Good | 60.95 MB/s | 0.821s | ✅ Verified |
 | doublezonline.cloud | ✅ Good | 88.57 MB/s | 0.565s | ✅ Verified |
 | docker.mrxn.net | ✅ Good | 59.29 MB/s | 0.844s | ✅ Verified |
-| lynn520.xyz | ❌ Failed | - | - | - |
-| ginger20240704.asia | ❌ Failed | - | - | - |
 | docker.anyhub.us.kg | ✅ Good | 7.59 MB/s | 6.588s | ✅ Verified |
 | docker.wget.at | ❌ Failed | - | - | - |
 | docker.awsl9527.cn | ✅ Good | 60.15 MB/s | 0.832s | ✅ Verified |
-| dockerpull.com | ❌ Failed | - | - | - |
+| dockerpull.org | ❌ Failed | - | - | - |
 | dhub.kubesre.xyz | ✅ Good | 14.71 MB/s | 3.401s | ✅ Verified |
 | docker.m.daocloud.io | ✅ Good | 15.33 MB/s | 3.263s | ✅ Verified |
-| dockerhub.icu | ❌ Failed | - | - | - |
 
 ## Docker 配置
 
