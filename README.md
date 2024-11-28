@@ -23,10 +23,9 @@
 | doublezonline.cloud | ✅ Good | 117.28 MB/s | 0.427s | ✅ Verified |
 | docker.mrxn.net | ✅ Good | 128.74 MB/s | 0.389s | ✅ Verified |
 | docker.anyhub.us.kg | ✅ Good | 28.81 MB/s | 1.738s | ✅ Verified |
-| docker.wget.at | ❌ Failed | - | - | - |
+| docker.imgdb.de | ❌ Failed | - | - | - |
 | docker.awsl9527.cn | ✅ Good | 88.17 MB/s | 0.568s | ✅ Verified |
 | dockerpull.org | ✅ Good | 20.73 MB/s | 2.415s | ✅ Verified |
-| dhub.kubesre.xyz | ❌ Failed | - | - | - |
 | docker.m.daocloud.io | ✅ Good | 12.95 MB/s | 3.865s | ✅ Verified |
 
 ## Docker 配置
