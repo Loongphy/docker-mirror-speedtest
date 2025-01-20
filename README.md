@@ -17,16 +17,16 @@
 
 | Registry | Status | Speed | Time | Integrity |
 |----------|--------|-------|------|-----------|
-| hub.rat.dev | ✅ Good | 68.05 MB/s | 0.659s | ✅ Verified |
-| docker.1panel.live | ✅ Good | 69.85 MB/s | 0.642s | ✅ Verified |
-| docker.wanpeng.top | ✅ Good | 82.43 MB/s | 0.544s | ✅ Verified |
-| doublezonline.cloud | ✅ Good | 86.41 MB/s | 0.519s | ✅ Verified |
-| docker.mrxn.net | ✅ Good | 54.55 MB/s | 0.822s | ✅ Verified |
-| docker.anyhub.us.kg | ✅ Good | 50.61 MB/s | 0.886s | ✅ Verified |
-| docker.imgdb.de | ✅ Good | 9.05 MB/s | 4.952s | ✅ Verified |
-| docker.awsl9527.cn | ✅ Good | 60.19 MB/s | 0.745s | ✅ Verified |
+| hub.rat.dev | ✅ Good | 39.16 MB/s | 1.145s | ✅ Verified |
+| docker.1panel.live | ✅ Good | 43.03 MB/s | 1.042s | ✅ Verified |
+| docker.wanpeng.top | ✅ Good | 41.67 MB/s | 1.076s | ✅ Verified |
+| doublezonline.cloud | ✅ Good | 41.83 MB/s | 1.072s | ✅ Verified |
+| docker.mrxn.net | ✅ Good | 32.78 MB/s | 1.368s | ✅ Verified |
+| docker.anyhub.us.kg | ✅ Good | 32.83 MB/s | 1.366s | ✅ Verified |
+| docker.imgdb.de | ✅ Good | 10.87 MB/s | 4.123s | ✅ Verified |
+| docker.awsl9527.cn | ✅ Good | 44.71 MB/s | 1.003s | ✅ Verified |
 | cjie.eu.org | ❌ Failed | - | - | - |
-| docker.m.daocloud.io | ✅ Good | 12.49 MB/s | 3.588s | ✅ Verified |
+| docker.m.daocloud.io | ✅ Good | 9.24 MB/s | 4.853s | ✅ Verified |
 
 ## Docker 配置
 
@@ -49,7 +49,7 @@ nano /etc/docker/daemon.json
 ```json
 {
      "registry-mirrors": [
-             "doublezonline.cloud","docker.wanpeng.top","docker.1panel.live"
+             "docker.awsl9527.cn","docker.1panel.live","doublezonline.cloud"
      ]
 }
 ```
