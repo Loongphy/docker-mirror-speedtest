@@ -25,7 +25,7 @@
 | docker.anyhub.us.kg | ✅ Good | 48.22 MB/s | 0.930s | ✅ Verified |
 | docker.imgdb.de | ✅ Good | 9.57 MB/s | 4.683s | ✅ Verified |
 | docker.awsl9527.cn | ✅ Good | 65.75 MB/s | 0.682s | ✅ Verified |
-| cjie.eu.org | ❌ Failed | - | - | - |
+| dockerpull.cn | - | - | - | - |
 | docker.m.daocloud.io | ✅ Good | 14.12 MB/s | 3.174s | ✅ Verified |
 
 ## Docker 配置
