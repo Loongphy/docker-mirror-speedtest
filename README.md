@@ -17,16 +17,16 @@
 
 | Registry | Status | Speed | Time | Integrity |
 |----------|--------|-------|------|-----------|
-| hub.rat.dev | ✅ Good | 36.72 MB/s | 1.221s | ✅ Verified |
-| docker.1panel.live | ✅ Good | 40.91 MB/s | 1.096s | ✅ Verified |
-| docker.wanpeng.top | ✅ Good | 44.18 MB/s | 1.015s | ✅ Verified |
-| doublezonline.cloud | ✅ Good | 49.94 MB/s | 0.898s | ✅ Verified |
-| docker.mrxn.net | ✅ Good | 35.67 MB/s | 1.257s | ✅ Verified |
-| docker.anyhub.us.kg | ✅ Good | 46.23 MB/s | 0.970s | ✅ Verified |
-| docker.imgdb.de | ✅ Good | 10.81 MB/s | 4.148s | ✅ Verified |
-| docker.awsl9527.cn | ✅ Good | 41.18 MB/s | 1.089s | ✅ Verified |
-| dockerpull.cn | ✅ Good | 39.58 MB/s | 1.133s | ✅ Verified |
-| docker.m.daocloud.io | ✅ Good | 10.21 MB/s | 4.390s | ✅ Verified |
+| hub.rat.dev | ✅ Good | 70.51 MB/s | 0.636s | ✅ Verified |
+| docker.1panel.live | ✅ Good | 99.65 MB/s | 0.450s | ✅ Verified |
+| docker.wanpeng.top | ✅ Good | 87.25 MB/s | 0.514s | ✅ Verified |
+| doublezonline.cloud | ✅ Good | 164.87 MB/s | 0.272s | ✅ Verified |
+| docker.mrxn.net | ✅ Good | 99.88 MB/s | 0.449s | ✅ Verified |
+| docker.anyhub.us.kg | ✅ Good | 64.62 MB/s | 0.694s | ✅ Verified |
+| docker.imgdb.de | ✅ Good | 8.18 MB/s | 5.480s | ✅ Verified |
+| docker.awsl9527.cn | ✅ Good | 148.99 MB/s | 0.301s | ✅ Verified |
+| dockerpull.cn | ✅ Good | 92.65 MB/s | 0.484s | ✅ Verified |
+| docker.m.daocloud.io | ✅ Good | 9.84 MB/s | 4.556s | ✅ Verified |
 
 ## Docker 配置
 
@@ -49,7 +49,7 @@ nano /etc/docker/daemon.json
 ```json
 {
      "registry-mirrors": [
-             "doublezonline.cloud","docker.anyhub.us.kg","docker.wanpeng.top"
+             "doublezonline.cloud","docker.awsl9527.cn","docker.mrxn.net"
      ]
 }
 ```
