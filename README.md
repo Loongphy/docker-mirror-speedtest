@@ -18,11 +18,8 @@
 | Registry | Status | Speed | Time | Integrity |
 |----------|--------|-------|------|-----------|
 | hub.rat.dev | ✅ Good | 13.74 MB/s | 3.321s | ✅ Verified |
-| docker.wanpeng.top | ❌ Failed | - | - | - |
 | doublezonline.cloud | ✅ Good | 48.99 MB/s | 0.932s | ✅ Verified |
 | docker.mrxn.net | ✅ Good | 34.12 MB/s | 1.338s | ✅ Verified |
-| docker.anyhub.us.kg | ❌ Failed | - | - | - |
-| docker.imgdb.de | ❌ Failed | - | - | - |
 | docker.awsl9527.cn | ✅ Good | 55.75 MB/s | 0.819s | ✅ Verified |
 | dockerpull.cn | ✅ Good | 33.64 MB/s | 1.357s | ✅ Verified |
 | docker.m.daocloud.io | ✅ Good | 16.51 MB/s | 2.765s | ✅ Verified |
