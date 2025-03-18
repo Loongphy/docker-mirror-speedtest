@@ -17,12 +17,12 @@
 
 | Registry | Status | Speed | Time | Integrity |
 |----------|--------|-------|------|-----------|
-| hub.rat.dev | ✅ Good | 8.53 MB/s | 5.348s | ✅ Verified |
-| doublezonline.cloud | ✅ Good | 152.71 MB/s | 0.299s | ✅ Verified |
-| docker.mrxn.net | ✅ Good | 107.18 MB/s | 0.426s | ✅ Verified |
-| docker.awsl9527.cn | ✅ Good | 114.15 MB/s | 0.400s | ✅ Verified |
-| dockerpull.cn | ✅ Good | 87.47 MB/s | 0.522s | ✅ Verified |
-| docker.m.daocloud.io | ✅ Good | 16.16 MB/s | 2.824s | ✅ Verified |
+| hub.rat.dev | ❌ Failed | - | - | - |
+| doublezonline.cloud | ✅ Good | 46.73 MB/s | 0.977s | ✅ Verified |
+| docker.mrxn.net | ✅ Good | 33.97 MB/s | 1.344s | ✅ Verified |
+| docker.awsl9527.cn | ✅ Good | 40.87 MB/s | 1.117s | ✅ Verified |
+| dockerpull.cn | ✅ Good | 33.69 MB/s | 1.355s | ✅ Verified |
+| docker.m.daocloud.io | ✅ Good | 18.01 MB/s | 2.535s | ✅ Verified |
 
 - docker.1panel.live 只支持中国大陆，无法测试
 
