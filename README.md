@@ -17,7 +17,7 @@
 
 | Registry | Status | Speed | Time | Integrity |
 |----------|--------|-------|------|-----------|
-| hub.rat.dev | ❌ Failed | - | - | - |
+| docker.1ms.run | | - | - | - |
 | doublezonline.cloud | ✅ Good | 46.73 MB/s | 0.977s | ✅ Verified |
 | docker.mrxn.net | ✅ Good | 33.97 MB/s | 1.344s | ✅ Verified |
 | docker.awsl9527.cn | ✅ Good | 40.87 MB/s | 1.117s | ✅ Verified |
