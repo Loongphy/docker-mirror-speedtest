@@ -17,12 +17,12 @@
 
 | Registry | Status | Speed | Time | Integrity |
 |----------|--------|-------|------|-----------|
-| docker.1ms.run | ✅ Good | 9.44 MB/s | 4.837s | ✅ Verified |
-| doublezonline.cloud | ✅ Good | 45.12 MB/s | 1.012s | ✅ Verified |
-| docker.mrxn.net | ✅ Good | 36.76 MB/s | 1.242s | ✅ Verified |
-| docker.awsl9527.cn | ✅ Good | 40.73 MB/s | 1.121s | ✅ Verified |
-| dockerpull.cn | ✅ Good | 29.72 MB/s | 1.536s | ✅ Verified |
-| docker.m.daocloud.io | ✅ Good | 18.83 MB/s | 2.425s | ✅ Verified |
+| docker.1ms.run | ✅ Good | 4.12 MB/s | 11.083s | ❌ Mismatch |
+| doublezonline.cloud | ✅ Good | 50.97 MB/s | 0.902s | ✅ Verified |
+| docker.mrxn.net | ✅ Good | 37.05 MB/s | 1.241s | ✅ Verified |
+| docker.awsl9527.cn | ✅ Good | 31.58 MB/s | 1.456s | ✅ Verified |
+| dockerpull.cn | ✅ Good | 42.93 MB/s | 1.071s | ✅ Verified |
+| docker.m.daocloud.io | ✅ Good | 18.16 MB/s | 2.531s | ✅ Verified |
 | docker.imgdb.de | ❌ Failed | - | - | - |
 
 - docker.1panel.live 只支持中国大陆，无法测试
@@ -48,7 +48,7 @@ nano /etc/docker/daemon.json
 ```json
 {
      "registry-mirrors": [
-             "doublezonline.cloud","docker.awsl9527.cn","docker.mrxn.net"
+             "doublezonline.cloud","dockerpull.cn","docker.mrxn.net"
      ]
 }
 ```
