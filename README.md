@@ -17,12 +17,12 @@
 
 | Registry | Status | Speed | Time | Integrity |
 |----------|--------|-------|------|-----------|
-| docker.1ms.run | ✅ Good | 11.14 MB/s | 4.487s | ✅ Verified |
-| doublezonline.cloud | ✅ Good | 128.25 MB/s | 0.390s | ✅ Verified |
+| docker.1ms.run | ✅ Good | 13.63 MB/s | 3.669s | ✅ Verified |
+| doublezonline.cloud | ✅ Good | 225.30 MB/s | 0.222s | ✅ Verified |
 | docker.mrxn.net | ❌ Failed | - | - | - |
-| docker.awsl9527.cn | ✅ Good | 89.79 MB/s | 0.557s | ✅ Verified |
-| dockerpull.cn | ✅ Good | 69.95 MB/s | 0.715s | ✅ Verified |
-| docker.m.daocloud.io | ✅ Good | 17.79 MB/s | 2.811s | ✅ Verified |
+| docker.awsl9527.cn | ✅ Good | 86.68 MB/s | 0.577s | ✅ Verified |
+| dockerpull.cn | ✅ Good | 70.94 MB/s | 0.705s | ✅ Verified |
+| docker.m.daocloud.io | ✅ Good | 12.53 MB/s | 3.990s | ✅ Verified |
 | docker.imgdb.de | ❌ Failed | - | - | - |
 
 - docker.1panel.live 只支持中国大陆，无法测试
