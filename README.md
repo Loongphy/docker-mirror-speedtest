@@ -1,5 +1,10 @@
 # Docker 镜像测速
 
+## 更新：可以考虑去 https://status.anye.xyz/ 查看，第三方产品，不做任何担保
+
+<img width="2940" height="1442" alt="image" src="https://github.com/user-attachments/assets/88d07c9e-3d3a-4e58-8d20-502e8feb0356" />
+
+
 ## Why
 
 因为众所周知的原因，国内访问 Docker Hub 的速度非常慢。广大热心网友贡献了大量的镜像加速服务，但是速度参差不齐。
