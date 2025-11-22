@@ -1,6 +1,6 @@
 # Docker 镜像测速
 
-## 更新：可以考虑去 https://status.anye.xyz/ 查看，第三方产品，不做任何担保
+有个网页版本的 https://status.anye.xyz，第三方产品，不做任何担保
 
 <img width="2940" height="1442" alt="image" src="https://github.com/user-attachments/assets/88d07c9e-3d3a-4e58-8d20-502e8feb0356" />
 
