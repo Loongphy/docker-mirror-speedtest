@@ -22,11 +22,11 @@
 
 | Registry | Status | Speed | Time | Integrity |
 |----------|--------|-------|------|-----------|
-| docker.1ms.run | ✅ Good | 14.97 MB/s | 3.955s | ✅ Verified |
+| docker.1ms.run | ✅ Good | 13.67 MB/s | 4.331s | ✅ Verified |
 | docker.xuanyuan.me | ❌ Failed | - | - | - |
 | registry.linkease.net:5443 | ❌ Failed | - | - | - |
-| docker.awsl9527.cn | ✅ Good | 112.37 MB/s | 0.527s | ✅ Verified |
-| docker.m.daocloud.io | ✅ Good | 21.62 MB/s | 2.739s | ✅ Verified |
+| docker.awsl9527.cn | ✅ Good | 96.29 MB/s | 0.615s | ✅ Verified |
+| docker.m.daocloud.io | ✅ Good | 14.43 MB/s | 4.102s | ✅ Verified |
 
 - docker.1panel.live 只支持中国大陆，无法测试
 
